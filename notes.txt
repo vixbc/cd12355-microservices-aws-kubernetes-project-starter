@@ -5,3 +5,16 @@ service name= postgresql-service
 
 closing forwarded ports
 ps aux | grep 'kubectl port-forward' | grep -v grep | awk '{print $2}' | xargs -r kill
+
+
+ecr repo
+coworking
+
+account ID
+123215241381
+
+user id
+AIDARZMBTMCSWKOLOGL3I
+
+arn
+arn:aws:iam::123215241381:user/user1
