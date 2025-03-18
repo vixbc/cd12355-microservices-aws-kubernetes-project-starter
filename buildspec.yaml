@@ -1,5 +1,13 @@
 version: 0.2
 
+env:
+  variables:
+    IMAGE_REPO_NAME: "coworking"
+    IMAGE_TAG: "0.0.1"
+    AWS_ACCOUNT_ID: "123215241381"
+    AWS_DEFAULT_REGION: "us-east-1"
+
+
 phases:
   pre_build:
     commands:
