@@ -11,14 +11,18 @@ RUN apt-get update -y && \
 # upgrade pip, setuptools,  wheel
 RUN pip install --upgrade pip setuptools wheel
 
-# set working directory
-WORKDIR analytics
 
-# copy current directory
-COPY . analytics
+# Set working directory
+WORKDIR /app
+
+# Copy only the requirements file first (for caching dependencies)
+COPY analytics/requirements.txt /app/requirements.txt
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r analytics/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+# Copy the rest of the application code
+COPY analytics /app/
 
 # Set environment variables for the database connection
 # These will be set dynamically at runtime
@@ -32,4 +36,4 @@ ENV DB_NAME=mydatabase
 EXPOSE 5153
 
 # Command to run the application
-CMD ["python", "analytics/app.py"]
+CMD ["python", "app.py"]
