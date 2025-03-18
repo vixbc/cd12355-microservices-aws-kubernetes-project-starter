@@ -1,0 +1,7 @@
+killing cluster
+eksctl delete cluster --name my-cluster --region us-east-1
+
+service name= postgresql-service
+
+closing forwarded ports
+ps aux | grep 'kubectl port-forward' | grep -v grep | awk '{print $2}' | xargs -r kill
