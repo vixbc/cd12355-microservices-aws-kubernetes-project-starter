@@ -1,5 +1,14 @@
 version: 0.2
 
+env:
+  variables:
+    IMAGE_NAME: "my-image"  # Default (override in CodeBuild)
+  parameter-store:
+    AWS_REGION: "/codebuild/aws-region"
+    ACCOUNT_ID: "/codebuild/account-id"
+    IMAGE_REPO: "/codebuild/image-repo"
+    IMAGE_TAG: "/codebuild/image-tag"
+
 phases:
   pre_build:
     commands:
