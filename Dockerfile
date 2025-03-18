@@ -27,10 +27,13 @@ COPY analytics /app/
 # Set environment variables for the database connection
 # These will be set dynamically at runtime
 ENV DB_USERNAME=myuser
-ENV DB_PASSWORD=${POSTGRES_PASSWORD}
+ENV DB_PASSWORD=mypassword
 ENV DB_HOST=127.0.0.1
 ENV DB_PORT=5433
 ENV DB_NAME=mydatabase
+
+# Set the application port
+ENV APP_PORT=5153
 
 # Expose the port your app will run on
 EXPOSE 5153

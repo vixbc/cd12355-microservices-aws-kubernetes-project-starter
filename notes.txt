@@ -18,3 +18,6 @@ AIDARZMBTMCSWKOLOGL3I
 
 arn
 arn:aws:iam::123215241381:user/user1
+
+cluster context 
+arn:aws:eks:us-east-1:123215241381:cluster/my-cluster
